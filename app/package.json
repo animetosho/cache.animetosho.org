@@ -1,0 +1,22 @@
+{
+  "name": "cache_server",
+  "version": "1.0.0",
+  "description": "Anime Tosho cached data browser",
+  "license": "CC0-1.0",
+  "author": "Anime Tosho",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/animetosho/cache.animetosho.org.git"
+  },
+  "main": "index.js",
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "dependencies" : {
+    "mariadb" : "3.2.*",
+    "log4js" : "*",
+    "markdown-it": "8.3.1"
+  },
+  "type": "commonjs",
+  "homepage": "https://cache.animetosho.org/"
+}

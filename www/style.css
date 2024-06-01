@@ -1,0 +1,125 @@
+body {margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.8; min-width: 21em}
+h1 {line-height: 1.2; font-size: 1.6em}
+h2 {font-size: 1.3em}
+a {text-decoration: underline #808080}
+a:hover {text-decoration: none}
+
+header {padding: 0.5em 2.5%}
+main {margin: 0 auto 5% auto; max-width: 95%; min-width: 19em}
+@media (min-width: 40em) {
+	main {max-width: 73%; min-width: 37em}
+}
+header a {text-decoration: none}
+header a:hover {text-decoration: underline}
+#header_right {float: right}
+header svg {height: 1.8em}
+#entry_flags {text-align: center; font-size: small}
+#entry_flags span {border: 1px solid; border-radius: .25em; padding: .1em .5em; margin: 0 .3em; text-transform: uppercase}
+#entry_properties {margin: 1em 0 1em 1em}
+#entry_properties_left, #entry_properties_right {min-width: 15em; vertical-align: top}
+@media (min-width: 70em) {
+	#entry_properties_left, #entry_properties_right {min-width: 25em; display: inline-block; width: 50%}
+	#entry_properties {margin-right: 1em}
+}
+#entry_properties dt {float: left; clear: left; width: 8em; white-space: nowrap; text-overflow: ellipsis; overflow: hidden}
+#entry_properties dt::after {content: ":"}
+#entry_properties dd {padding-right: 1em; margin-left: 8em; white-space: nowrap; text-overflow: ellipsis; overflow: hidden}
+.entry_infohash code {font-size: .8em; padding: .1em .2em; display: inline-block; line-height: 1; max-width: 100%; text-overflow: ellipsis; overflow: hidden}
+@media (max-width: 27em) {
+	#entry_properties {margin-left: .25em}
+	#entry_properties dt {width: 7em}
+	#entry_properties dd {padding-right: 0; margin-left: 7em}
+}
+#entry_links {list-style-type: none; text-align: center; padding: 0; white-space: nowrap}
+#entry_links li {display: inline; margin: .3em .75em}
+#entry_links li:first-child {margin-left: 0}
+#entry_links li:last-child {margin-right: 0}
+#entry_links a {padding: .5em 1em; border: 1px solid; border-radius: .2em; text-decoration: none}
+#entry_description {overflow-x: auto; margin: 2em 0; padding: .8em 1em}
+.user_anonymous {font-style: italic}
+hr {border-top: 1px solid}
+
+#entry_comments > h2 {margin-bottom: .2em}
+#entry_comments > table {border-spacing: 0 1em; width: 100%}
+.comment_container {outline: thin solid; border-radius: .3em}
+.comment_container > th {max-width: 15em; width: 0; font-weight: normal; text-align: left; vertical-align: top; padding: .5em 0 .5em 1em}
+.comment_container.user_banned span.comment_username {text-decoration: line-through 2px}
+.comment_info_wide .comment_date {display:block; font-size: smaller; white-space: nowrap}
+.comment_info_wide .comment_username {display:block}
+.comment_info_wide .user_avatar {text-align: center; margin: .3em 0}
+.comment_info_wide .user_avatar img {max-width: 9em}
+.comment_username {font-weight: bold}
+.comment_content {vertical-align: top; padding: .5em 1em .5em 1em; overflow-x: auto}
+.comment_info_narrow {display: none; font-size: smaller}
+.comment_info_narrow .user_avatar {float: left; display: block; margin: 0 1em 0 -.5em; width: 4em}
+.comment_info_narrow .user_avatar img {max-height: 4em}
+.user_avatar img {vertical-align: top}
+.entry_submitter.user_banned {text-decoration: line-through 1px}
+
+@media (max-width: 52em) {
+	.comment_info_wide {display: none}
+	.comment_info_narrow {display: block}
+}
+.border {border: 1px solid; border-radius: 0.5em; padding: 0 1em}
+
+
+.md_content {overflow-y: hidden}
+.md_content img {max-width: 100%; vertical-align: middle}
+.md_content blockquote {border-left: .5em solid; margin-left: 0; padding: .25em 1em}
+.md_content pre {border: 1px solid; border-radius: .3em; padding: .2em .5em; margin: .2em 0; word-wrap: break-word}
+.md_content pre code {white-space: pre-wrap}
+.md_content p:first-child {margin-top: 0}
+.md_content p:last-child {margin-bottom: 0}
+.md_content table {width: auto; max-width: 100%; border: 1px solid; border-spacing: 0; border-collapse: collapse; margin-bottom: 1em}
+.md_content table th {border-style: solid; border-width: 0 1px 2px 1px; padding: .2em .5em; text-align: left; vertical-align: bottom}
+.md_content table td {border-width: 1px; border-style: solid; padding: .2em .5em; vertical-align: top}
+
+body {background: #f2f2f2; color: #444444}
+a {color: #444444}
+a:hover {color: #333}
+header {background: #444444; color: #f2f2f2}
+header a {color: #f2f2f2}
+header a:hover {color: #fff}
+#gh_icon path {fill: #f2f2f2}
+.entry_flag_hidden {color: #888}
+.entry_flag_remake {color: #ff00ff}
+.entry_flag_trusted {color: #008000}
+.entry_flag_deleted {color: #ff0000}
+#entry_properties code {background: #fafafa}
+#entry_links a {border-color: #444; background: #ddd}
+#entry_links a:hover {background: #eee; border-color: #333}
+#entry_links a:active {background: #ccc; border-color: #333}
+#entry_description {background: #f6f6f6}
+.comment_container {outline-color: #666; background: #f6f6f6}
+.comment_container.user_submitter {outline-color: #6666ff}
+.comment_container.user_submitter span.comment_username {color: #6666ff !important}
+.md_content blockquote {border-left-color: #bbb}
+.md_content pre {border-color: #666; background: #e0e0e0}
+.md_content table, .md_content td, .md_content th {border-color: #666}
+.md_content tbody tr:nth-of-type(2n+1) {background: #e8e8e8}
+.border, hr {border-color: #666}
+@media (prefers-color-scheme: dark) {
+	body {background: #222; color: #ccc}
+	a {border-bottom-color: #ccc; color: #ccc}
+	a:hover {color: #ddd}
+	header {background: #999; color: #222}
+	header a {color: #222}
+	header a:hover {color: #111}
+	#gh_icon path {fill: #24292f}
+	.entry_flag_hidden {color: #999}
+	.entry_flag_remake {color: #e000e0}
+	.entry_flag_trusted {color: #00c000}
+	#entry_properties code {background: #111}
+	#entry_links a {border-color: #ccc; background: #333}
+	#entry_links a:hover {background: #444; border-color: #ddd}
+	#entry_links a:active {background: #2a2a2a; border-color: #ddd}
+	#entry_description {background: #282828}
+	.comment_container {outline-color: #aaa; background: #282828}
+	.comment_container.user_submitter {outline-color: #aaaaff}
+	.comment_container.user_submitter span.comment_username {color: #aaaaff !important}
+	.md_content blockquote {border-left-color: #666}
+	.md_content pre {border-color: #aaa; background: #3a3a3a}
+	.md_content table, .md_content td, .md_content th {border-color: #aaa}
+	.md_content tbody tr:nth-of-type(2n+1) {background: #363636}
+	.border, hr {border-color: #aaa}
+}
