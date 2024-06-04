@@ -3,10 +3,19 @@
 const html = require('./html');
 const markdown = require('markdown-it')({html:false,breaks:true,linkify:true,typographer:true});
 
+const MIN_NYAASI_ID = (is_sukebei => is_sukebei ? 2303964 : 923009);
+
 // markdown rules copied from Nyaa [https://nyaa.si/static/js/main.js]
 const mdDefaultRender = markdown.renderer.rules.link_open || ((tokens, idx, options, env, self) => self.renderToken(tokens, idx, options));
 markdown.renderer.rules.link_open = (tokens, idx, options, env, self) => {
-	tokens[idx].attrPush(['rel', 'noopener noreferrer']);
+	const token = tokens[idx];
+	const href = token.attrGet('href');
+	// rewrite Nyaa.si view URLs to cache
+	const m = href.match(/^https:\/\/(sukebei\.)?nyaa\.si\/view\/(\d+)$/i);
+	if(m && (m[2]|0) >= MIN_NYAASI_ID(m[1]))
+		token.attrSet('href', '/nyaasi' + (m[1] ? '-sukebei':'') + '/view/' + m[2]);
+	else
+		token.attrPush(['rel', 'noopener noreferrer']);
 	return mdDefaultRender(tokens, idx, options, env, self);
 };
 
@@ -165,7 +174,7 @@ module.exports = {
 			
 			const htmlHead = '<link rel="canonical" href="https://cache.animetosho.org/nyaasi'+if_sukebei('-sukebei')+'/view/'+id+'"/>';
 			
-			if(id < (is_sukebei ? 2303964 : 923009)) {
+			if(id < MIN_NYAASI_ID(is_sukebei)) {
 				resp.writeHead(404);
 				resp.end(page_html('[Not found]', '<h2>Specified ID not found</h2><p>This cache does not contain data before Nyaa.si\'s inception (2017-05-12). Please use another archive for data sourced from NyaaTorrents/Nyaa.se (defunct since 2017-05-02)</p>', htmlHead, is_sukebei));
 				return;
